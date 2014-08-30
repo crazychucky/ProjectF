@@ -6,6 +6,7 @@
 #include "cocos-ext.h"
 USING_NS_CC;
 USING_NS_CC_EXT;
+using namespace cocos2d::ui;
 
 class TestBaseScene:public CCScene
 {
@@ -19,6 +20,7 @@ public:
 	void onExit();
 
 private:
+	void addTestFuncBtn(const char* s,const CCPoint pt,SEL_TouchEvent selector);
 
 };
 
