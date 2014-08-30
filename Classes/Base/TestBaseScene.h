@@ -1,4 +1,4 @@
-//TestSceneµÄ»ùÀà
+ï»¿//TestSceneçš„åŸºç±»
 #ifndef __TESTBASESCENE_H__
 #define __TESTBASESCENE_H__
 
@@ -19,8 +19,12 @@ public:
 	void onEnter();
 	void onExit();
 
-private:
+protected:
 	void addTestFuncBtn(const char* s,const CCPoint pt,SEL_TouchEvent selector);
+
+protected:
+	TouchGroup* m_mainTouchGroup;
+private:
 
 };
 

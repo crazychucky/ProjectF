@@ -24,6 +24,9 @@
     <ClCompile Include="..\Classes\Base\TestBaseScene.cpp">
       <Filter>Classes\Base</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TestMainScene.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -37,6 +40,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Base\TestBaseScene.h">
       <Filter>Classes\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TestMainScene.h">
+      <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
