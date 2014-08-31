@@ -23,6 +23,15 @@ GameObj::~GameObj()
 	CCLOG("INFO:GameObj %d Deleted Safely",this->m_iObjID);
 }
 
+bool GameObj::init()
+{
+	if (false == CCNode::init())
+	{
+		return false;
+	}
+
+	return true;
+}
 GameObj* GameObj::getGameObjByID(int objID)
 {
 	if (objID<nextVaildObjID)
@@ -33,4 +42,14 @@ GameObj* GameObj::getGameObjByID(int objID)
 	{
 		return NULL;
 	}
+}
+
+void GameObj::onEnter()
+{
+	CCNode::onEnter();
+}
+
+void GameObj::onExit()
+{
+	CCNode::onExit();
 }

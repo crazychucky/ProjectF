@@ -12,16 +12,22 @@ class GameObj:public CCNode
 public:
 	GameObj();
 	~GameObj();
-	CREATE_FUNC(GameObj);
+	virtual bool init();
+
 	int getObjID() const
 	{
 		return m_iObjID;
 	}
+
 	static GameObj* getGameObjByID(int objID);
+
 	static int getMaxGameObjID()
 	{
 		return (nextVaildObjID-1);
 	}
+
+	void onEnter();
+	void onExit();
 private:
 	int m_iObjID;
 	static int nextVaildObjID;

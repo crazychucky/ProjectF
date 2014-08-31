@@ -16,6 +16,7 @@ public:
 	void onExit();
 
 private:
+	void testSingleAI(CCObject* pSender,TouchEventType eventtype);
 
 };
 

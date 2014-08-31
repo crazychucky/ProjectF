@@ -63,6 +63,9 @@
     <ClCompile Include="..\Classes\FishGame\Test\SingleFishAITestScene.cpp">
       <Filter>Classes\FishGame\Test</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\FishObj.cpp">
+      <Filter>Classes\FishGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\FishGame\Test\SingleFishAITestScene.h">
       <Filter>Classes\FishGame\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\FishObj.h">
+      <Filter>Classes\FishGame</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

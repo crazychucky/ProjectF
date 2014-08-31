@@ -16,6 +16,8 @@ public:
 	void onExit();
 
 private:
+	CCLayer* m_bgLayer;
+	CCLayer* m_fishLayer;
 
 };
 

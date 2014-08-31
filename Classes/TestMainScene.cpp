@@ -23,7 +23,7 @@ bool TestMainScene::init()
 	CCPoint pt;
 	CCPoint ptOff;
 	pt = ccp(100,480);
-	ptOff = ccp(0,-70);
+	ptOff = ccp(0,-60);
 
 	//Fish game
 	pt = pt + ptOff;

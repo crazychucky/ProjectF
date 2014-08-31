@@ -36,6 +36,16 @@ MovingGameObj* MovingGameObj::create(float objMass,float objMaxSpeed,float objMa
 	return pObj;
 }
 
+bool MovingGameObj::init()
+{
+	if (false == GameObj::init())
+	{
+		return false;
+	}
+
+	return true;
+}
+
 void MovingGameObj::steeringMoving(float dt)
 {
 
@@ -105,4 +115,14 @@ void MovingGameObj::TagMovingGameObj(float neighborRadius)
 		}
 	}
 	m_iNeighborsSize=nCount;
+}
+
+void MovingGameObj::onEnter()
+{
+	GameObj::onEnter();
+}
+
+void MovingGameObj::onExit()
+{
+	GameObj::onExit();
 }

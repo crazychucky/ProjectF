@@ -12,49 +12,64 @@ class MovingGameObj:public GameObj
 public:
 	MovingGameObj();
 	~MovingGameObj();
+
 	static MovingGameObj* create(float objMass,float objMaxSpeed,float objMaxForce,CCPoint heading);
+
+	virtual bool init();
+
 	SteeringBehavior*const getSteering() const
 	{
 		return m_pSteering;
 	}
+
 	float getMaxForce()const
 	{
 		return m_fMaxForce;
 	}
+
 	float getMaxSpeed()const
 	{
 		return m_fMaxSpeed;
 	}
+
 	float getSpeed()const
 	{
 		return m_vVelocity.getLength();
 	}
+
 	CCPoint getHeading()const
 	{
 		return m_vHeading;
 	}
+
 	CCPoint getVelocity()const
 	{
 		return m_vVelocity;
 	}
+
 	CCPoint getPosition() const
 	{
 		return m_obPosition;
 	}
+
 	CCPoint getLastPosition() const
 	{
 		return m_obLastPosition;
 	}
+
 	float getObjRadius()
 	{
 		return m_fObjRadius;
 	}
+
 	void steeringMoving(float dt);  //moving excute
+
 	static MovingGameObj* getMovingGameObjByID(int objID)
 	{
 		MovingGameObj* pObj=(MovingGameObj*)MovingGameObj::getGameObjByID(objID);
 		return pObj;
 	}
+
 
 	void Tag()
 	{
@@ -63,6 +78,7 @@ public:
 			m_bTag=true;
 		}
 	}
+
 	void UnTag()
 	{
 		if (true==m_bTag)
@@ -70,19 +86,27 @@ public:
 			m_bTag=false;
 		}
 	}
+
 	bool isTaged()const
 	{
 		return m_bTag;
 	}
+
 	void TagMovingGameObj(float neighborRadius);
+
 	int getNeighborsSize()const
 	{
 		return m_iNeighborsSize;
 	}
+
 	MovingGameObj* getNeighborByIndex(int i)
 	{
 		return m_neighbors[i];
 	}
+
+	void onEnter();
+	void onExit();
+
 protected:
 	CREATE_FUNC(MovingGameObj);
 	SteeringBehavior* m_pSteering;
