@@ -13,7 +13,6 @@ class TestBaseScene:public CCScene
 public:
 	TestBaseScene();
 	virtual ~TestBaseScene();
-	CREATE_FUNC(TestBaseScene);
 	virtual bool init();
 
 	void onEnter();

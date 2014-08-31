@@ -1,4 +1,4 @@
-//Test SceneµÄÖ÷½çÃæ
+ï»¿//Test Sceneçš„ä¸»ç•Œé¢
 #ifndef __TESTMAINSCENE_H__
 #define __TESTMAINSCENE_H__
 

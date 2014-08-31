@@ -10,6 +10,12 @@
     <Filter Include="Classes\Base">
       <UniqueIdentifier>{f1c5c7dc-f084-4e18-9113-c7ac2db34b8c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\FishGame">
+      <UniqueIdentifier>{d6cddeb4-72e3-4348-8619-8911be303750}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\FishGame\Test">
+      <UniqueIdentifier>{2778afa4-b682-480e-9156-8a141bfb3a79}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -27,6 +33,9 @@
     <ClCompile Include="..\Classes\TestMainScene.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\Test\FishGameTestScene.cpp">
+      <Filter>Classes\FishGame\Test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -43,6 +52,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\TestMainScene.h">
       <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\Test\FishGameTestScene.h">
+      <Filter>Classes\FishGame\Test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

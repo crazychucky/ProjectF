@@ -1,4 +1,5 @@
-#include "TestMainScene.h"
+﻿#include "TestMainScene.h"
+#include "FishGame/Test/FishGameTestScene.h"
 
 TestMainScene::TestMainScene()
 {
@@ -26,6 +27,7 @@ void TestMainScene::testFunc1(CCObject* pSender,TouchEventType eventtype)
 {
 	if (TOUCH_EVENT_ENDED == eventtype)
 	{
-		CCLOG("Touch Pressed");
+		FishGameTestScene* pScene =FishGameTestScene::create();
+		CCDirector::sharedDirector()->pushScene(pScene);
 	}
 }
