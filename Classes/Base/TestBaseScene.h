@@ -21,9 +21,15 @@ public:
 protected:
 	void addTestFuncBtn(const char* s,const CCPoint pt,SEL_TouchEvent selector);
 
+	void setTitle(char* s);
+
+	void setBackBtnEnabled(bool b);
 protected:
 	TouchGroup* m_mainTouchGroup;
+	Label* m_titleLabel;
+	Button* m_backBtn;
 private:
+	void onBack(CCObject* pSender,TouchEventType eventtype);
 
 };
 

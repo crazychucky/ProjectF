@@ -17,6 +17,7 @@ bool FishGameTestScene::init()
 		return false;
 	}
 
+	setTitle("Fish Game Test Console");
 	return true;
 }
 

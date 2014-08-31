@@ -18,6 +18,7 @@ bool TestMainScene::init()
 	{
 		return false;
 	}
+	setTitle("Main Test Console");
 
 	CCPoint pt;
 	CCPoint ptOff;
@@ -32,6 +33,7 @@ bool TestMainScene::init()
 	pt = pt + ptOff;
 	addTestFuncBtn("Filter",pt,toucheventselector(TestMainScene::testWaterFilter));
 
+	setBackBtnEnabled(false);
 	return true;
 }
 

@@ -16,6 +16,7 @@ bool WaterFilterTestScene::init()
 	{
 		return false;
 	}
+	setTitle("Water Filter Test");
 
 	return true;
 }
