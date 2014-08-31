@@ -12,7 +12,9 @@ public:
 	CREATE_FUNC(TestMainScene);
 	virtual bool init();
 private:
-	void testFunc1(CCObject* pSender,TouchEventType eventtype);
+	void testFishGame(CCObject* pSender,TouchEventType eventtype);
+
+	void testWaterFilter(CCObject* pSender,TouchEventType eventtype);
 };
 
 #endif

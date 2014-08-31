@@ -1,5 +1,6 @@
 ﻿#include "TestMainScene.h"
 #include "FishGame/Test/FishGameTestScene.h"
+#include "WaterFilter/Test/WaterFilterTestScene.h"
 
 TestMainScene::TestMainScene()
 {
@@ -18,16 +19,36 @@ bool TestMainScene::init()
 		return false;
 	}
 
-	CCPoint pt = ccp(100,420);
-	addTestFuncBtn("Output",pt,toucheventselector(TestMainScene::testFunc1));
+	CCPoint pt;
+	CCPoint ptOff;
+	pt = ccp(100,480);
+	ptOff = ccp(0,-70);
+
+	//Fish game
+	pt = pt + ptOff;
+	addTestFuncBtn("Fish Game",pt,toucheventselector(TestMainScene::testFishGame));
+
+	//Water Filter
+	pt = pt + ptOff;
+	addTestFuncBtn("Filter",pt,toucheventselector(TestMainScene::testWaterFilter));
+
 	return true;
 }
 
-void TestMainScene::testFunc1(CCObject* pSender,TouchEventType eventtype)
+void TestMainScene::testFishGame(CCObject* pSender,TouchEventType eventtype)
 {
 	if (TOUCH_EVENT_ENDED == eventtype)
 	{
 		FishGameTestScene* pScene =FishGameTestScene::create();
+		CCDirector::sharedDirector()->pushScene(pScene);
+	}
+}
+
+void TestMainScene::testWaterFilter(CCObject* pSender,TouchEventType eventtype)
+{
+	if (TOUCH_EVENT_ENDED == eventtype)
+	{
+		WaterFilterTestScene* pScene =WaterFilterTestScene::create();
 		CCDirector::sharedDirector()->pushScene(pScene);
 	}
 }
