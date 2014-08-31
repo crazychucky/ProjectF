@@ -1,4 +1,7 @@
-﻿#pragma once
+﻿//运动游戏对象
+#ifndef __MOVINGGAMEOBJ_H__
+#define __MOVINGGAMEOBJ_H__
+
 #include "cocos2d.h"
 #include "GameObj.h"
 #include "SteeringBehaviors.h"
@@ -98,3 +101,5 @@ protected:
 };
 
 #define GetMovingGameObj(d) MovingGameObj::getMovingGameObjByID(d)
+
+#endif

@@ -1,4 +1,7 @@
-﻿#pragma once
+﻿//游戏对象
+#ifndef __GAMEOBJ_H__
+#define __GAMEOBJ_H__
+
 #include "cocos2d.h"
 USING_NS_CC;
 
@@ -27,3 +30,5 @@ private:
 
 #define GetGameObj(d) GameObj::getGameObjByID(d)
 #define GetMaxGameObjID() GameObj::getMaxGameObjID()
+
+#endif

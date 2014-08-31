@@ -1,4 +1,4 @@
-//Fish Game Test SceneµÄÖ÷½çÃæ
+ï»¿//Fish Game Test Sceneçš„ä¸»ç•Œé¢
 #ifndef __FISHGAMETESTSCENE_H__
 #define __FISHGAMETESTSCENE_H__
 
