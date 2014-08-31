@@ -1,0 +1,36 @@
+﻿#include "GameObj.h"
+#include "cocos2d.h"
+
+int GameObj::nextVaildObjID=0;
+GameObj* GameObj::m_pAllGameObjs[k_Max_Obj]={};
+
+GameObj::GameObj()
+{
+	this->m_iObjID=GameObj::nextVaildObjID;
+	if(this->m_iObjID<k_Max_Obj)
+	{
+		GameObj::m_pAllGameObjs[this->m_iObjID]=this;
+	}
+	else
+	{
+		CCLOG("ERROR:GameObj Reaches the Limit: %d",this->m_iObjID);
+	}
+	GameObj::nextVaildObjID++;
+}
+
+GameObj::~GameObj()
+{
+	CCLOG("INFO:GameObj %d Deleted Safely",this->m_iObjID);
+}
+
+GameObj* GameObj::getGameObjByID(int objID)
+{
+	if (objID<nextVaildObjID)
+	{
+		return m_pAllGameObjs[objID];
+	}
+	else
+	{
+		return NULL;
+	}
+}

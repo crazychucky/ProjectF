@@ -22,6 +22,9 @@
     <Filter Include="Classes\WaterFilter\Test">
       <UniqueIdentifier>{c338abb8-5903-41fc-930b-e09d290d6850}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\FishGame\AIBase">
+      <UniqueIdentifier>{c47ff76d-c206-4ed8-a380-3022f59c951a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -45,6 +48,18 @@
     <ClCompile Include="..\Classes\WaterFilter\Test\WaterFilterTestScene.cpp">
       <Filter>Classes\WaterFilter\Test</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\AIBase\GameObj.cpp">
+      <Filter>Classes\FishGame\AIBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\AIBase\MovingGameObj.cpp">
+      <Filter>Classes\FishGame\AIBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\AIBase\SteeringBehaviors.cpp">
+      <Filter>Classes\FishGame\AIBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Base\CommonFunction.cpp">
+      <Filter>Classes\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -67,6 +82,21 @@
     </ClInclude>
     <ClInclude Include="..\Classes\WaterFilter\Test\WaterFilterTestScene.h">
       <Filter>Classes\WaterFilter\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIBase\GameObj.h">
+      <Filter>Classes\FishGame\AIBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIBase\MovingGameObj.h">
+      <Filter>Classes\FishGame\AIBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIBase\SteeringBehaviors.h">
+      <Filter>Classes\FishGame\AIBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Base\DSList.h">
+      <Filter>Classes\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Base\CommonFunction.h">
+      <Filter>Classes\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
