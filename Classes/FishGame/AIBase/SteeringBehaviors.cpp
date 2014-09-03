@@ -381,63 +381,6 @@ CCPoint SteeringBehavior::Cohesion()
 
 CCPoint SteeringBehavior::ObstacleAvoidance()
 {
-	//in orginal code there're three feelers
-	//but here only use one
-	/*
-	float DistToThisIP=0;
-	float DistToClosetIP=999999.0f;
-	int ClosetWall=-1;
-	CCPoint SteeringForce,point,ClosetPoint;
-	SteeringForce=CCPointZero;
-	const float feelerLen=50.0f;
-	CCPoint p1=m_pVehicle->getPosition();
-	CCPoint p2=p1+m_pVehicle->getHeading()*feelerLen;
-	CCPoint wallLineStart,wallLineEnd;
-	//judge
-	CCPoint wallAgainst;
-	Element<ObstacleObj>* pElem=g_allObstacleObjs->getHead();
-	while (pElem)
-	{
-		ObstacleObj* pObj=pElem->pData;
-		//可以出 不能进!
-		if (pObj->isPointInPolygon(m_pVehicle->getPosition()))
-		{
-			pElem=pElem->pNext;
-			continue;
-		}
-		int nPoints=pObj->getPointsNum();
-		CCPoint rPt;
-		for (int i=0;i<nPoints;i++)
-		{
-			const CCPoint wallLineStart=pObj->getPointByIndex(i);
-			const CCPoint wallLineEnd=pObj->getPointByIndex(((i+1)%nPoints));
-			if(getCrossPoint(p1,p2,wallLineStart,wallLineEnd,rPt))
-			{
-				DistToThisIP=rPt.getDistance(m_pVehicle->getPosition());
-				if (DistToThisIP<DistToClosetIP)
-				{
-					DistToClosetIP=DistToThisIP;
-					ClosetWall=i;
-					ClosetPoint=rPt;
-					wallAgainst=(wallLineEnd-wallLineStart).getPerp();
-					if (wallAgainst.dot(p1-wallLineEnd)<0)
-					{
-						wallAgainst=(wallLineEnd-wallLineStart).getRPerp();
-					}
-					wallAgainst=wallAgainst.normalize();
-				}
-			}
-		}
-		pElem=pElem->pNext;
-	}
-
-	if (ClosetWall>=0)
-	{
-		CCPoint OverShoot=p2-ClosetPoint;
-		SteeringForce=wallAgainst*OverShoot.getLength();
-	}
-	return SteeringForce;
-	*/
 	return CCPointZero;
 }
 

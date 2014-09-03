@@ -65,43 +65,68 @@ private:
 public:
 	SteeringBehavior(MovingGameObj* agent);
 	~SteeringBehavior();
+
+	//behaviors method
 	CCPoint Calculate();
+
 	CCPoint Wander();
+
 	CCPoint Pursuit(const MovingGameObj* evader);
+	
 	CCPoint Seek(CCPoint TargetPos);
+
 	CCPoint Evade(MovingGameObj* pursuer);
+
 	CCPoint Flee(CCPoint TargetPos);
+
 	CCPoint WallAvoidance();
+
 	CCPoint Arrive(CCPoint TargetPos,Deceleration deceleration);
+
 	CCPoint OffsetPursuit(const MovingGameObj* leader,const CCPoint offset);
-	CCPoint Separation();
-	CCPoint SeparationAll();
-	//CCPoint ObstacleAvoidance(const std::vector<BaseGameEntity*>& obstacles)
+
 	CCPoint ObstacleAvoidance();
+
+	CCPoint Separation();
+
+	CCPoint SeparationAll();
+
+
 	CCPoint Alignment();
+
 	CCPoint Cohesion();
 
 
 	void EvadeOn(MovingGameObj* v){m_iFlags |= evade; m_pTargetAgent1 = v;}
 	void EvadeOff(){if(On(evade)) m_iFlags ^=evade;}
+
 	void PursuitOn(MovingGameObj* v){m_iFlags |= pursuit; m_pTargetAgent1 = v;}
 	void PursuitOff(){if(On(pursuit)) m_iFlags ^=pursuit;}
+
 	void WanderOn(){m_iFlags|= wander;}
 	void WanderOff(){if(On(wander)) m_iFlags ^=wander;}
+
 	void FleeOn()   {m_iFlags|=flee;}
 	void FleeOff()  {if(On(flee))   m_iFlags ^=flee;}
+
 	void WallAvoidanceOn(CCRect r)   {m_iFlags|=wall_avoidance;m_rWallRect=r;}
 	void WallAvoidanceOff()  {if(On(wall_avoidance))   m_iFlags ^=wall_avoidance;}
+
 	void OffsetPursuitOn(MovingGameObj* v1, const CCPoint offset){m_iFlags |= offset_pursuit; m_vOffset = offset; m_pTargetAgent1 = v1;}  
 	void OffsetPursuitOff(){if(On(offset_pursuit)) m_iFlags ^=offset_pursuit;}
+
 	void SeparationOn(){m_iFlags|=separation;}
 	void SeparationOff(){if(On(separation)) m_iFlags^=separation;}
+
 	void AlignmentOn(){m_iFlags|=allignment;}
 	void AlignmentOff(){if(On(allignment)) m_iFlags^=allignment;}
+
 	void CohesionOn(){m_iFlags|=cohesion;}
 	void CohesionOff(){if(On(cohesion)) m_iFlags^=cohesion;}
+
 	void ObstacleAvoidanceOn()   {m_iFlags|=obstacle_avoidance;}
 	void ObstacleAvoidanceOff()  {if(On(obstacle_avoidance))   m_iFlags ^=obstacle_avoidance;}
+
 	bool On(behavior_type bt){return (m_iFlags & bt) == bt;}
 };
 
