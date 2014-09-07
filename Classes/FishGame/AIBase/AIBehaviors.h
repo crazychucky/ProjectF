@@ -8,13 +8,9 @@ USING_NS_CC;
 class AIBehavior:public CCObject
 {
 public:
-	AIBehavior()
-	{
-		m_behaviorType = none;
-	};
 	virtual ~AIBehavior()
 	{
-		CCLOG("AI Behaviors deleted safely");
+		CCLOG("AI Behaviors:%d deleted safely",m_behaviorType);
 	};
 
 	//¼ÆËãAIÇ£ÒýÁ¦
@@ -46,6 +42,12 @@ public:
 		return m_behaviorType;
 	}
 protected:
+	AIBehavior()
+	{
+		m_behaviorType = none;
+		this->autorelease();
+	};
+
 	float m_behaviorWeight;
 
 	behavior_type m_behaviorType;

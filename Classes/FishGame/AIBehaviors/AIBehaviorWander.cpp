@@ -16,6 +16,7 @@ AIBehaviorWander::AIBehaviorWander(MovingGameObj* obj)
 	m_fWanderJitter = BehaviorWander_WanderJitter;
 	m_fWanderRadius = BehaviorWander_WanderRadius;
 	m_fWanderDistance = BehaviorWander_WanderDistance;
+
 }
 
 AIBehaviorWander::~AIBehaviorWander()
