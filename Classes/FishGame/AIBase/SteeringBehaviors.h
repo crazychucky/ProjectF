@@ -18,13 +18,13 @@ public:
 
 	CCPoint calculateAllBehaviorsForce();
 
-	bool addBehavior(AIBehaviors* pBehavior);
+	bool addBehavior(AIBehavior* pBehavior);
 
 	bool accumulateForce(CCPoint &runningTot,CCPoint forceToAdd);
 
-	bool isBehaviorOn(AIBehaviors::behavior_type bType);
+	bool isBehaviorOn(AIBehavior::behavior_type bType);
 
-	void removeBehavior(AIBehaviors::behavior_type bType);
+	void removeBehavior(AIBehavior::behavior_type bType);
 protected:
 	CCArray* m_allBehaviors;
 	MovingGameObj* m_pVehicle;

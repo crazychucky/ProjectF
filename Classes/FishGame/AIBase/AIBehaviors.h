@@ -5,14 +5,14 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
-class AIBehaviors:public CCObject
+class AIBehavior:public CCObject
 {
 public:
-	AIBehaviors()
+	AIBehavior()
 	{
 		m_behaviorType = none;
 	};
-	virtual ~AIBehaviors()
+	virtual ~AIBehavior()
 	{
 		CCLOG("AI Behaviors deleted safely");
 	};

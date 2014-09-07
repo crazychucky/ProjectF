@@ -25,6 +25,9 @@
     <Filter Include="Classes\FishGame\AIBase">
       <UniqueIdentifier>{c47ff76d-c206-4ed8-a380-3022f59c951a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\FishGame\AIBehaviors">
+      <UniqueIdentifier>{f8d8a63c-f033-4ba4-a4ae-4b2f8b9ec768}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -65,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\FishGame\FishObj.cpp">
       <Filter>Classes\FishGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\AIBehaviors\AIBehaviorWander.cpp">
+      <Filter>Classes\FishGame\AIBehaviors</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\FishGame\AIBase\AIBehaviors.h">
       <Filter>Classes\FishGame\AIBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorWander.h">
+      <Filter>Classes\FishGame\AIBehaviors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

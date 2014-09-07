@@ -52,13 +52,19 @@ bool SteeringBehaviors::accumulateForce(CCPoint &runningTot,CCPoint forceToAdd)
 	return true;
 }
 
-bool SteeringBehaviors::addBehavior(AIBehaviors* pBehavior)
+bool SteeringBehaviors::addBehavior(AIBehavior* pBehavior)
 {
 	//check for if already exist the same type
 	if (true == this->isBehaviorOn(pBehavior->getBehaviorType()))
 	{
 			CCAssert(false,"The type is already existed");
             return false;
+	}
+
+	if (AIBehavior::none == pBehavior->getBehaviorType())
+	{
+		CCAssert(false,"The behavior type must be initilized");
+		return false;
 	}
 
 	m_allBehaviors->addObject(pBehavior);
@@ -72,10 +78,10 @@ CCPoint SteeringBehaviors::calculateAllBehaviorsForce()
 	CCPoint vSteeringForce = CCPointZero;
 	CCPoint vForce = CCPointZero;
 
-	AIBehaviors* theBehavior = NULL;
+	AIBehavior* theBehavior = NULL;
     for (unsigned int i = 0; i< m_allBehaviors->count(); i++)
 	{
-		theBehavior = dynamic_cast<AIBehaviors*>(m_allBehaviors->objectAtIndex(i));
+		theBehavior = dynamic_cast<AIBehavior*>(m_allBehaviors->objectAtIndex(i));
 
 		vForce = theBehavior->calculateBehaviorForce();
 		if (!accumulateForce(vSteeringForce, vForce)) 
@@ -86,12 +92,12 @@ CCPoint SteeringBehaviors::calculateAllBehaviorsForce()
 	return vSteeringForce;
 }
 
-bool SteeringBehaviors::isBehaviorOn(AIBehaviors::behavior_type bType)
+bool SteeringBehaviors::isBehaviorOn(AIBehavior::behavior_type bType)
 {
-	AIBehaviors*  pCurBehavior = NULL;
+	AIBehavior*  pCurBehavior = NULL;
     for (unsigned int i = 0; i< m_allBehaviors->count(); i++)
     {
-		pCurBehavior = dynamic_cast<AIBehaviors*>(m_allBehaviors->objectAtIndex(i));
+		pCurBehavior = dynamic_cast<AIBehavior*>(m_allBehaviors->objectAtIndex(i));
         if (pCurBehavior->getBehaviorType() ==  bType)
         {
             return true;
@@ -100,12 +106,12 @@ bool SteeringBehaviors::isBehaviorOn(AIBehaviors::behavior_type bType)
 	return false;
 }
 
-void SteeringBehaviors::removeBehavior(AIBehaviors::behavior_type bType)
+void SteeringBehaviors::removeBehavior(AIBehavior::behavior_type bType)
 {
-	AIBehaviors*  pCurBehavior = NULL;
+	AIBehavior*  pCurBehavior = NULL;
     for (unsigned int i = 0; i< m_allBehaviors->count(); i++)
     {
-		pCurBehavior = dynamic_cast<AIBehaviors*>(m_allBehaviors->objectAtIndex(i));
+		pCurBehavior = dynamic_cast<AIBehavior*>(m_allBehaviors->objectAtIndex(i));
         if (pCurBehavior->getBehaviorType() ==  bType)
         {
 			m_allBehaviors->removeObjectAtIndex(i);
