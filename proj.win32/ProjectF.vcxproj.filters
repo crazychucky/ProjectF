@@ -116,5 +116,8 @@
     <ClInclude Include="..\Classes\FishGame\FishAIBehaviors.h">
       <Filter>Classes\FishGame</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIBase\AIBehaviors.h">
+      <Filter>Classes\FishGame\AIBase</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
