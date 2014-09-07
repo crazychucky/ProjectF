@@ -1,4 +1,4 @@
-#include "Base/CommonFunction.h"
+﻿#include "Base/CommonFunction.h"
 #include "FishGame/AIBehaviors/AIBehaviorWallAvoidacne.h"
 
 AIBehaviorWallAvoidacne::AIBehaviorWallAvoidacne(MovingGameObj* obj,CCRect wallRect)

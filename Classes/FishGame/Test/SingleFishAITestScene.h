@@ -1,4 +1,4 @@
-//µ¥Àý AI¶ÔÏó²âÊÔ
+ï»¿//å•ä¾‹ AIå¯¹è±¡æµ‹è¯•
 #ifndef __SINGLEFISHAITESTSCENE_H__
 #define __SINGLEFISHAITESTSCENE_H__
 

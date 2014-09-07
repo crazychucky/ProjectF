@@ -1,4 +1,4 @@
-#ifndef __AIBehaviorWander_H__
+﻿#ifndef __AIBehaviorWander_H__
 #define __AIBehaviorWander_H__
 
 #include "FishGame/AIBase/AIBehaviors.h"

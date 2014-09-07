@@ -1,11 +1,11 @@
-#include "FishGame/AIBehaviors/AIBehaviorWander.h"
+﻿#include "FishGame/AIBehaviors/AIBehaviorWander.h"
 
 
-#define BehaviorWander_WanderJitter 80.0f
+#define BehaviorWander_WanderJitter 80.0f  //不明
 
-#define BehaviorWander_WanderRadius 10.0f
+#define BehaviorWander_WanderRadius 5.0f  //转动角度 过大产生抽风
 
-#define BehaviorWander_WanderDistance 50.0f
+#define BehaviorWander_WanderDistance 30.0f  //好像和计算的最终力有关?过大会抵消WallAvoid
 
 
 AIBehaviorWander::AIBehaviorWander(MovingGameObj* obj)
@@ -36,7 +36,7 @@ CCPoint AIBehaviorWander::calculateBehaviorForce()
 
 	CCPoint disPt=ccpAdd(targetPt,ccp(m_fWanderDistance,0));
 
-	//ת��
+	//转换
 	float sinA,cosA;
 	float sinB,cosB;
 	sinA=(float)(m_pVehicle->getHeading().y/m_pVehicle->getHeading().getDistance(CCPointZero));

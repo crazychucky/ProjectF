@@ -1,4 +1,4 @@
-//AI Behaviors AIÐÐÎª
+ï»¿//AI Behaviors AIè¡Œä¸º
 #ifndef __AIBehavior_H__
 #define __AIBehavior_H__
 
@@ -15,7 +15,7 @@ public:
 		CCLOG("AI Behaviors:%d deleted safely",m_behaviorType);
 	};
 
-	//¼ÆËãAIÇ£ÒýÁ¦
+	//è®¡ç®—AIç‰µå¼•åŠ›
 	virtual CCPoint calculateBehaviorForce()=0;
 	float getBehaviorWeight()const
 	{
