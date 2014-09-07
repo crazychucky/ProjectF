@@ -32,13 +32,15 @@ bool FishObj::init()
 	sp->setAnchorPoint(ccp(0.5,0.5));
 
 	CCRect wall=CCRectMake(20.f,20.0f,760.0f,440.0f);
-	SteeringBehavior* pSteering=this->getSteering();
+	SteeringBehaviors* pSteering=this->getSteering();
+	/*
 	pSteering->WallAvoidanceOn(wall);
 	pSteering->WanderOn();
 	pSteering->SeparationOn();
 	pSteering->AlignmentOn();
 	pSteering->CohesionOn();
 	pSteering->ObstacleAvoidanceOn();
+	*/
 
 	scheduleUpdate();
 

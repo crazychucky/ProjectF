@@ -1,6 +1,7 @@
 ﻿#include "MovingGameObj.h"
 #include "cocos2d.h"
 #include "Base/CommonFunction.h"
+#include "FishGame/AIBase/SteeringBehaviors.h"
 USING_NS_CC;
 
 MovingGameObj::MovingGameObj()
@@ -9,7 +10,7 @@ MovingGameObj::MovingGameObj()
 	m_fMaxForce=100.0f;
 	m_fMaxSpeed=100.0f;
 	m_fObjRadius=0;
-	m_pSteering=new SteeringBehavior(this);
+	m_pSteering=new SteeringBehaviors(this);
 	m_bTag=false;
 	m_iNeighborsSize=0;
 	for (int i=0;i<k_Max_Obj;i++)
@@ -48,15 +49,13 @@ bool MovingGameObj::init()
 
 void MovingGameObj::steeringMoving(float dt)
 {
+	CCPoint oldPos = this->getPosition();
+	CCPoint vSteeringForce;
 
-	CCPoint OldPos = this->getPosition();
-	CCPoint SteeringForce;
-
-	//calculate the combined force from each steering behavior in the vehicle's list
-	SteeringForce = m_pSteering->Calculate();
+	vSteeringForce = m_pSteering->calculateAllBehaviorsForce();
 
 	//Acceleration = Force/Mass
-	CCPoint acceleration = SteeringForce / m_fMass;
+	CCPoint acceleration = vSteeringForce / m_fMass;
 
 	//update velocity
 	m_vVelocity =m_vVelocity + acceleration; 
@@ -68,31 +67,14 @@ void MovingGameObj::steeringMoving(float dt)
 	//update the heading if the vehicle has a non zero velocity
 	if (m_vVelocity.getLengthSq()>0.00001)
 	{
-		this->setPosition(OldPos+m_vVelocity);
-		m_obLastPosition=OldPos;
+		this->setPosition(oldPos+m_vVelocity);
+		m_obLastPosition=oldPos;
 		m_vHeading = m_vVelocity.normalize();
 	}
 
 	/*
-	if(SteeringForce.getLengthSq()>0.00001)
-	{
-	}
-	*/
-	//EnforceNonPenetrationConstraint(this, World()->Agents());
-	/*
-	//treat the screen as a toroid
-	WrapAround(m_vPos, m_pWorld->cxClient(), m_pWorld->cyClient());
-
-	//update the vehicle's current cell if space partitioning is turned on
-	if (Steering()->isSpacePartitioningOn())
-	{
-		World()->CellSpace()->UpdateEntity(this, OldPos);
-	}
-
-	if (isSmoothingOn())
-	{
-		m_vSmoothedHeading = m_pHeadingSmoother->Update(Heading());
-	}
+	TODO:优化计算:网格等
+	TODO:平滑移动
 	*/
 }
 
@@ -125,4 +107,15 @@ void MovingGameObj::onEnter()
 void MovingGameObj::onExit()
 {
 	GameObj::onExit();
+}
+
+SteeringBehaviors*const MovingGameObj::getSteering()const
+{
+	return m_pSteering;
+}
+
+MovingGameObj* MovingGameObj::getMovingGameObjByID(int objID)
+{
+	MovingGameObj* pObj=(MovingGameObj*)MovingGameObj::getGameObjByID(objID);
+	return pObj;
 }

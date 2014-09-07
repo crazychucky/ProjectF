@@ -137,7 +137,6 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\FishGame\AIBase\GameObj.cpp" />
     <ClCompile Include="..\Classes\FishGame\AIBase\MovingGameObj.cpp" />
     <ClCompile Include="..\Classes\FishGame\AIBase\SteeringBehaviors.cpp" />
-    <ClCompile Include="..\Classes\FishGame\FishAIBehaviors.cpp" />
     <ClCompile Include="..\Classes\FishGame\FishObj.cpp" />
     <ClCompile Include="..\Classes\FishGame\Test\FishGameTestScene.cpp" />
     <ClCompile Include="..\Classes\FishGame\Test\SingleFishAITestScene.cpp" />
@@ -155,7 +154,6 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\FishGame\AIBase\GameObj.h" />
     <ClInclude Include="..\Classes\FishGame\AIBase\MovingGameObj.h" />
     <ClInclude Include="..\Classes\FishGame\AIBase\SteeringBehaviors.h" />
-    <ClInclude Include="..\Classes\FishGame\FishAIBehaviors.h" />
     <ClInclude Include="..\Classes\FishGame\FishObj.h" />
     <ClInclude Include="..\Classes\FishGame\Test\FishGameTestScene.h" />
     <ClInclude Include="..\Classes\FishGame\Test\SingleFishAITestScene.h" />

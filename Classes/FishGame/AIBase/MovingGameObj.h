@@ -4,8 +4,9 @@
 
 #include "cocos2d.h"
 #include "GameObj.h"
-#include "SteeringBehaviors.h"
 USING_NS_CC;
+
+class SteeringBehaviors;
 
 class MovingGameObj:public GameObj
 {
@@ -17,59 +18,27 @@ public:
 
 	virtual bool init();
 
-	SteeringBehavior*const getSteering() const
-	{
-		return m_pSteering;
-	}
+	SteeringBehaviors*const getSteering() const;
 
-	float getMaxForce()const
-	{
-		return m_fMaxForce;
-	}
+	float getMaxForce()const{ return m_fMaxForce;}
 
-	float getMaxSpeed()const
-	{
-		return m_fMaxSpeed;
-	}
+	float getMaxSpeed()const{ return m_fMaxSpeed;}
 
-	float getSpeed()const
-	{
-		return m_vVelocity.getLength();
-	}
+	float getSpeed()const{ return m_vVelocity.getLength();}
 
-	CCPoint getHeading()const
-	{
-		return m_vHeading;
-	}
+	CCPoint getHeading()const{ return m_vHeading;}
 
-	CCPoint getVelocity()const
-	{
-		return m_vVelocity;
-	}
+	CCPoint getVelocity()const{ return m_vVelocity;}
 
-	CCPoint getPosition() const
-	{
-		return m_obPosition;
-	}
+	CCPoint getPosition() const{ return m_obPosition;}
 
-	CCPoint getLastPosition() const
-	{
-		return m_obLastPosition;
-	}
+	CCPoint getLastPosition() const{ return m_obLastPosition;}
 
-	float getObjRadius()
-	{
-		return m_fObjRadius;
-	}
+	float getObjRadius(){ return m_fObjRadius;}
 
 	void steeringMoving(float dt);  //moving excute
 
-	static MovingGameObj* getMovingGameObjByID(int objID)
-	{
-		MovingGameObj* pObj=(MovingGameObj*)MovingGameObj::getGameObjByID(objID);
-		return pObj;
-	}
-
+	static MovingGameObj* getMovingGameObjByID(int objID);
 
 	void Tag()
 	{
@@ -109,7 +78,7 @@ public:
 
 protected:
 	CREATE_FUNC(MovingGameObj);
-	SteeringBehavior* m_pSteering;
+	SteeringBehaviors* m_pSteering;
 	//param
 	float m_fMaxForce;
 	float m_fMaxSpeed;
