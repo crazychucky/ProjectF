@@ -3,6 +3,8 @@
 #define __AIBehavior_H__
 
 #include "cocos2d.h"
+#include "FishGame/AIBase/MovingGameObj.h"
+
 USING_NS_CC;
 
 class AIBehavior:public CCObject
@@ -15,6 +17,10 @@ public:
 
 	//¼ÆËãAIÇ£ÒýÁ¦
 	virtual CCPoint calculateBehaviorForce()=0;
+	float getBehaviorWeight()const
+	{
+		return m_behaviorWeight;
+	}
 
 	static enum behavior_type
 	{
@@ -45,12 +51,14 @@ protected:
 	AIBehavior()
 	{
 		m_behaviorType = none;
+		m_behaviorWeight = 1.0f;
 		this->autorelease();
-	};
-
-	float m_behaviorWeight;
+	}
 
 	behavior_type m_behaviorType;
+	float m_behaviorWeight;
+	MovingGameObj* m_pVehicle;
+
 
 };
 

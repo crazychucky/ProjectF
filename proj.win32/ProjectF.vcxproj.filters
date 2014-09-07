@@ -72,6 +72,9 @@
     <ClCompile Include="..\Classes\FishGame\AIBehaviors\AIBehaviorWander.cpp">
       <Filter>Classes\FishGame\AIBehaviors</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\AIBehaviors\AIBehaviorWallAvoidance.cpp">
+      <Filter>Classes\FishGame\AIBehaviors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -120,6 +123,9 @@
       <Filter>Classes\FishGame\AIBase</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorWander.h">
+      <Filter>Classes\FishGame\AIBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorWallAvoidacne.h">
       <Filter>Classes\FishGame\AIBehaviors</Filter>
     </ClInclude>
   </ItemGroup>

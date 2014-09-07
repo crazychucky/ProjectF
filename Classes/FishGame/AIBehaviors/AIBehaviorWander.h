@@ -13,11 +13,9 @@ public:
 	virtual CCPoint calculateBehaviorForce();
 
 private:
-	MovingGameObj* m_pVehicle;
 	float m_fWanderRadius;
 	float m_fWanderJitter;
 	float m_fWanderDistance;
-
 };
 
 #endif

@@ -83,7 +83,7 @@ CCPoint SteeringBehaviors::calculateAllBehaviorsForce()
 	{
 		theBehavior = dynamic_cast<AIBehavior*>(m_allBehaviors->objectAtIndex(i));
 
-		vForce = theBehavior->calculateBehaviorForce();
+		vForce = theBehavior->calculateBehaviorForce() * theBehavior->getBehaviorWeight();
 		if (!accumulateForce(vSteeringForce, vForce)) 
 		{
 			return vSteeringForce;

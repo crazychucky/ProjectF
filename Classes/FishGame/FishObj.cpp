@@ -1,10 +1,11 @@
 #include "FishGame/FishObj.h"
-
 //AI
-#include "FishGame/AIBehaviors/AIBehaviorWander.h"
 #include "FishGame/AIBase/SteeringBehaviors.h"
+#include "FishGame/AIBehaviors/AIBehaviorWander.h"
+#include "FishGame/AIBehaviors/AIBehaviorWallAvoidacne.h"
 
 #define FISH_IMAGE "circle.png"
+
 FishObj::FishObj()
 {
 
@@ -38,8 +39,12 @@ bool FishObj::init()
 	CCRect wall=CCRectMake(20.f,20.0f,760.0f,440.0f);
 	SteeringBehaviors* pSteering=this->getSteering();
 
-	AIBehaviorWander* pBWander = new AIBehaviorWander(this);
-	pSteering->addBehavior(pBWander);
+	AIBehaviorWander* pAIWander = new AIBehaviorWander(this);
+	pSteering->addBehavior(pAIWander);
+
+	AIBehaviorWallAvoidacne* pAIWallAvoidance = new AIBehaviorWallAvoidacne(this,wall);
+	pSteering->addBehavior(pAIWallAvoidance);
+	
 	/*
 	pSteering->WallAvoidanceOn(wall);
 	pSteering->WanderOn();

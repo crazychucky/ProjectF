@@ -25,7 +25,7 @@ bool TestBaseScene::init()
 	}
 
 	m_mainTouchGroup = TouchGroup::create();
-	this->addChild(m_mainTouchGroup);
+	this->addChild(m_mainTouchGroup,999);
 
 	m_titleLabel = Label::create();
 	CCSize winSize =CCDirector::sharedDirector()->getVisibleSize();
