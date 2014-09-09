@@ -2,31 +2,12 @@
 #include "FishGame/AIBase/AIBehaviors.h"
 #include "FishGame/Test/SingleFishAITestScene.h"
 #include "FishGame/AIBehaviors/AIBehaviorWallAvoidacne.h"
+#include "FishGame/Test/DrawLayer.h"
 
 #define BG_IMAGE "white.jpg"
 
 
-DrawLayer::DrawLayer()
-{
 
-}
-
-DrawLayer::~DrawLayer()
-{
-
-}
-
-void DrawLayer::setDrawRect(CCRect r)
-{
-	m_drawRect = r;
-}
-
-void DrawLayer::draw()
-{
-	ccDrawColor4B(255,0,0,255);
-	CCPoint dstPt = m_drawRect.origin+ccp(m_drawRect.size.width,m_drawRect.size.height);
-	ccDrawRect(m_drawRect.origin,dstPt);
-}
 
 SingleFishAITestScene::SingleFishAITestScene()
 {
@@ -81,10 +62,10 @@ bool SingleFishAITestScene::init()
 	pt = pt + ptOff;
 	addTestFuncBtn("Wall Switch",pt,toucheventselector(SingleFishAITestScene::onWallTest));
 
-	m_drawLayer = DrawLayer::create();
+	//debug draw
 	CCRect wall=CCRectMake(20.f,20.0f,760.0f,440.0f);
-	m_drawLayer->setDrawRect(wall);
-	this->addChild(m_drawLayer,998);
+	setDrawRect(wall);
+	this->addChild(DrawLayer::create(this));
 
 	return true;
 }
@@ -115,7 +96,7 @@ void SingleFishAITestScene::onWallTest(CCObject* pSender,TouchEventType eventtyp
 
 			m_fishObj->setPosition(ccp(400,240));
 
-			m_drawLayer->setDrawRect(wall);
+			setDrawRect(wall);
 		}
 		else
 		{
@@ -129,7 +110,19 @@ void SingleFishAITestScene::onWallTest(CCObject* pSender,TouchEventType eventtyp
 
 			m_fishObj->setPosition(ccp(400,240));
 
-			m_drawLayer->setDrawRect(wall);
+			setDrawRect(wall);
 		}
 	}
+}
+
+void SingleFishAITestScene::setDrawRect(CCRect r)
+{
+	m_drawRect = r;
+}
+
+void SingleFishAITestScene::debugDraw()
+{
+	ccDrawColor4B(255,0,0,255);
+	CCPoint dstPt = m_drawRect.origin+ccp(m_drawRect.size.width,m_drawRect.size.height);
+	ccDrawRect(m_drawRect.origin,dstPt);
 }

@@ -75,6 +75,12 @@
     <ClCompile Include="..\Classes\FishGame\AIBehaviors\AIBehaviorWallAvoidance.cpp">
       <Filter>Classes\FishGame\AIBehaviors</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\AIBehaviors\AIBehaviorSeparation.cpp">
+      <Filter>Classes\FishGame\AIBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\Test\DrawLayer.cpp">
+      <Filter>Classes\FishGame\Test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -127,6 +133,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorWallAvoidacne.h">
       <Filter>Classes\FishGame\AIBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorSeparation.h">
+      <Filter>Classes\FishGame\AIBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\Test\MultiFishAITestScene.h">
+      <Filter>Classes\FishGame\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\Test\DrawLayer.h">
+      <Filter>Classes\FishGame\Test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

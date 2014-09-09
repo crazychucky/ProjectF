@@ -6,6 +6,13 @@
 
 USING_NS_CC;
 
+/*
+static int less(const CCObject* p1, const CCObject* p2)
+{
+    return ((CCTouchHandler*)p1)->getPriority() < ((CCTouchHandler*)p2)->getPriority();
+}
+*/
+
 SteeringBehaviors::SteeringBehaviors(MovingGameObj* pVehicle)
 {
 	m_pVehicle = pVehicle;
@@ -68,6 +75,7 @@ bool SteeringBehaviors::addBehavior(AIBehavior* pBehavior)
 	}
 
 	m_allBehaviors->addObject(pBehavior);
+    //std::qsort(m_allBehaviors->data->arr, m_allBehaviors->data->arr + m_allBehaviors->data->num, less);
 
 	CCLOG("The type %d behavior successfully added!",pBehavior->getBehaviorType());
 	return true;

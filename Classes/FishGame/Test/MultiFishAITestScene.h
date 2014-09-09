@@ -1,13 +1,26 @@
-Ôªø//Âçï‰æã AIÂØπË±°ÊµãËØï
+//µ•¿˝ AI∂‘œÛ≤‚ ‘
 #ifndef __SINGLEFISHAITESTSCENE_H__
 #define __SINGLEFISHAITESTSCENE_H__
 
 #include "Base/TestBaseScene.h"
 #include "FishGame/FishObj.h"
-#include "FishGame/Test/DrawLayer.h"
 
+/*
+class DrawLayer:public CCLayer
+{
+public:
+	DrawLayer();
+	virtual ~DrawLayer();
+	CREATE_FUNC(DrawLayer);
 
-class SingleFishAITestScene:public TestBaseScene,public DrawDelegate
+	void setDrawRect(CCRect r);
+private:
+	CCRect m_drawRect;
+
+	void draw();
+};
+
+class SingleFishAITestScene:public TestBaseScene
 {
 public:
 	SingleFishAITestScene();
@@ -18,20 +31,17 @@ public:
 	void onEnter();
 	void onExit();
 
-	virtual void debugDraw();
-
 private:
 	CCLayer* m_bgLayer;
 	CCLayer* m_fishLayer;
 	FishObj* m_fishObj;
+	DrawLayer* m_drawLayer;
 	bool m_smallWallFlag;
-	CCRect m_drawRect;
 
 private:
 	void onWallTest(CCObject* pSender,TouchEventType eventtype);
 
-	void setDrawRect(CCRect r);
-
 };
+*/
 
 #endif
