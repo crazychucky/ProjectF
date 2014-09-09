@@ -11,7 +11,7 @@ MultiFishAITestScene::MultiFishAITestScene()
 
 MultiFishAITestScene::~MultiFishAITestScene()
 {
-
+	GameObj::clearObjID();
 }
 
 void MultiFishAITestScene::onEnter()
