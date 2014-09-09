@@ -16,7 +16,7 @@ SingleFishAITestScene::SingleFishAITestScene()
 
 SingleFishAITestScene::~SingleFishAITestScene()
 {
-
+	GameObj::clearObjID();
 }
 
 bool SingleFishAITestScene::init()
@@ -26,7 +26,8 @@ bool SingleFishAITestScene::init()
 		return false;
 	}
 
-	setTitle("Single AI Test");
+	setTitle("Single AI Test:big Map");
+	m_titleLabel->setColor(ccBLACK);
 
 	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
 
@@ -86,6 +87,8 @@ void SingleFishAITestScene::onWallTest(CCObject* pSender,TouchEventType eventtyp
 	{
 		if (false == m_smallWallFlag)
 		{
+			setTitle("Single AI Test:small Map");
+
 			m_smallWallFlag = true;
 			SteeringBehaviors* pSteering = m_fishObj->getSteering();
 			pSteering->removeBehavior(AIBehavior::wall_avoidance);
@@ -100,6 +103,8 @@ void SingleFishAITestScene::onWallTest(CCObject* pSender,TouchEventType eventtyp
 		}
 		else
 		{
+			setTitle("Single AI Test:big Map");
+
 			m_smallWallFlag = false;
 			SteeringBehaviors* pSteering = m_fishObj->getSteering();
 			pSteering->removeBehavior(AIBehavior::wall_avoidance);

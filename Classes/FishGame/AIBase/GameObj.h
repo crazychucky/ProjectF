@@ -26,6 +26,11 @@ public:
 		return (nextVaildObjID-1);
 	}
 
+	static void clearObjID()
+	{
+		nextVaildObjID = 0;
+	}
+
 	void onEnter();
 	void onExit();
 private:

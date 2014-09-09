@@ -9,7 +9,7 @@ AIBehaviorSeparation::AIBehaviorSeparation(MovingGameObj* obj)
 
 AIBehaviorSeparation::~AIBehaviorSeparation()
 {
-
+	GameObj::clearObjID();
 }
 
 CCPoint AIBehaviorSeparation::calculateBehaviorForce()
