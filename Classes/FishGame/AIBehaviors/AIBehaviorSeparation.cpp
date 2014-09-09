@@ -4,6 +4,7 @@ AIBehaviorSeparation::AIBehaviorSeparation(MovingGameObj* obj)
 {
 	m_behaviorType = AIBehavior::separation;
 	m_pVehicle = obj;
+	m_behaviorWeight = 10.0f;
 }
 
 AIBehaviorSeparation::~AIBehaviorSeparation()
@@ -30,7 +31,7 @@ CCPoint AIBehaviorSeparation::calculateBehaviorForce()
 		len=ToAgent.getLength();
 
 
-		float twoObjRadius=m_pVehicle->getContentSize().width/2.0f+obj->getContentSize().width/2.0f;  //TODO:修改成指定参数?
+		float twoObjRadius = 32.0f;  //TODO:修改成指定参数?
 		len=len-twoObjRadius;
 		if (len<=0)
 		{

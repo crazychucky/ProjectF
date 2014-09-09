@@ -81,6 +81,9 @@
     <ClCompile Include="..\Classes\FishGame\Test\DrawLayer.cpp">
       <Filter>Classes\FishGame\Test</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\Test\MultiFishAITestScene.cpp">
+      <Filter>Classes\FishGame\Test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

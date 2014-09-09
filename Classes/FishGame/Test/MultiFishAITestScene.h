@@ -1,47 +1,33 @@
 //µ•¿˝ AI∂‘œÛ≤‚ ‘
-#ifndef __SINGLEFISHAITESTSCENE_H__
-#define __SINGLEFISHAITESTSCENE_H__
+#ifndef __MultiFishAITestScene_H__
+#define __MultiFishAITestScene_H__
 
 #include "Base/TestBaseScene.h"
 #include "FishGame/FishObj.h"
+#include "FishGame/Test/DrawLayer.h"
 
-/*
-class DrawLayer:public CCLayer
+#define MultiFishNum 40
+class MultiFishAITestScene:public TestBaseScene,public DrawDelegate
 {
 public:
-	DrawLayer();
-	virtual ~DrawLayer();
-	CREATE_FUNC(DrawLayer);
-
-	void setDrawRect(CCRect r);
-private:
-	CCRect m_drawRect;
-
-	void draw();
-};
-
-class SingleFishAITestScene:public TestBaseScene
-{
-public:
-	SingleFishAITestScene();
-	virtual ~SingleFishAITestScene();
-	CREATE_FUNC(SingleFishAITestScene);
+	MultiFishAITestScene();
+	virtual ~MultiFishAITestScene();
+	CREATE_FUNC(MultiFishAITestScene);
 	bool init();
 
 	void onEnter();
 	void onExit();
 
+	virtual void debugDraw();
+
 private:
+	bool m_separationAIFlag;
 	CCLayer* m_bgLayer;
 	CCLayer* m_fishLayer;
-	FishObj* m_fishObj;
-	DrawLayer* m_drawLayer;
-	bool m_smallWallFlag;
+	FishObj* m_multiFish[MultiFishNum];
 
 private:
-	void onWallTest(CCObject* pSender,TouchEventType eventtype);
-
+	void onSwitchSeparationAI(CCObject* pSender,TouchEventType eventtype);
 };
-*/
 
 #endif

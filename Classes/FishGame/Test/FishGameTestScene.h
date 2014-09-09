@@ -18,6 +18,8 @@ public:
 private:
 	void testSingleAI(CCObject* pSender,TouchEventType eventtype);
 
+	void testMultiAI(CCObject* pSender,TouchEventType eventtype);
+
 };
 
 #endif
