@@ -146,5 +146,8 @@
     <ClInclude Include="..\Classes\FishGame\Test\DrawLayer.h">
       <Filter>Classes\FishGame\Test</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorSettings.h">
+      <Filter>Classes\FishGame\AIBehaviors</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
