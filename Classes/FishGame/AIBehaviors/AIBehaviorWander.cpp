@@ -11,6 +11,8 @@
 AIBehaviorWander::AIBehaviorWander(MovingGameObj* obj)
 {
 	m_behaviorType = AIBehavior::wander;
+	setAIPriority(m_behaviorType);
+
 	m_pVehicle = obj;
 
 	m_fWanderJitter = BehaviorWander_WanderJitter;

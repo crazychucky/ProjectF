@@ -25,20 +25,20 @@ public:
 	static enum behavior_type
 	{
 		none               = 0x00000,
-		seek               = 0x00002,
-		flee               = 0x00004,
-		arrive             = 0x00008,
-		wander             = 0x00010,
-		cohesion           = 0x00020,
-		separation         = 0x00040,
+		wall_avoidance     = 0x00002,
+		obstacle_avoidance = 0x00004,
+		separation         = 0x00008,
+		flee               = 0x00010,
+		evade              = 0x00020,
+		hide               = 0x00040,
 		allignment         = 0x00080,
-		obstacle_avoidance = 0x00100,
-		wall_avoidance     = 0x00200,
+		cohesion           = 0x00100,
+		seek               = 0x00200,
 		follow_path        = 0x00400,
 		pursuit            = 0x00800,
-		evade              = 0x01000,
+		arrive             = 0x01000,
 		interpose          = 0x02000,
-		hide               = 0x04000,
+		wander             = 0x04000,
 		flock              = 0x08000,
 		offset_pursuit     = 0x10000,
 	};
@@ -47,17 +47,42 @@ public:
 	{
 		return m_behaviorType;
 	}
+
+	int getAIPriority()const
+	{
+		return m_priority;
+	}
+	bool isAIPriorityInited()const
+	{
+		return m_priorityInitedFlag;
+	}
 protected:
 	AIBehavior()
 	{
 		m_behaviorType = none;
+		m_priorityInitedFlag = false;
+		m_priority = 0;   //AI优先级
 		m_behaviorWeight = 1.0f;
 		this->autorelease();
 	}
 
+	void setAIPriority(int n)
+	{
+		if (false == m_priorityInitedFlag)
+		{
+			m_priorityInitedFlag = true;
+		}
+		m_priority = n;
+	}
+
+protected:
 	behavior_type m_behaviorType;
 	float m_behaviorWeight;
 	MovingGameObj* m_pVehicle;
+
+private:
+	bool m_priorityInitedFlag;
+	int m_priority;
 
 
 };

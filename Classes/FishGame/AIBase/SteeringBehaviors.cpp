@@ -4,14 +4,17 @@
 #include "Base/DSList.h"
 #include "Base/CommonFunction.h"
 
+#include <algorithm>
+
 USING_NS_CC;
 
-/*
+/**
+ * Used for sort
+ */
 static int less(const CCObject* p1, const CCObject* p2)
 {
-    return ((CCTouchHandler*)p1)->getPriority() < ((CCTouchHandler*)p2)->getPriority();
+    return ((AIBehavior*)p1)->getAIPriority() < ((AIBehavior*)p2)->getAIPriority();
 }
-*/
 
 SteeringBehaviors::SteeringBehaviors(MovingGameObj* pVehicle)
 {
@@ -74,8 +77,16 @@ bool SteeringBehaviors::addBehavior(AIBehavior* pBehavior)
 		return false;
 	}
 
+	if (false == pBehavior->isAIPriorityInited())
+	{
+		CCAssert(false,"The behavior AI Priority be initilized");
+		return false;
+	}
+
 	m_allBehaviors->addObject(pBehavior);
-    //std::qsort(m_allBehaviors->data->arr, m_allBehaviors->data->arr + m_allBehaviors->data->num, less);
+
+	//AI计算优先级排序
+	//rearrangeBehaviors();
 
 	CCLOG("The type %d behavior successfully added!",pBehavior->getBehaviorType());
 	return true;
@@ -125,5 +136,9 @@ void SteeringBehaviors::removeBehavior(AIBehavior::behavior_type bType)
 			m_allBehaviors->removeObjectAtIndex(i);
         }
     }
+}
 
+void SteeringBehaviors::rearrangeBehaviors()
+{
+    std::sort(m_allBehaviors->data->arr, m_allBehaviors->data->arr + m_allBehaviors->data->num, less);
 }

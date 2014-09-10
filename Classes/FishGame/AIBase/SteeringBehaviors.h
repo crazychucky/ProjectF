@@ -25,9 +25,13 @@ public:
 	bool isBehaviorOn(AIBehavior::behavior_type bType);
 
 	void removeBehavior(AIBehavior::behavior_type bType);
+
 protected:
 	CCArray* m_allBehaviors;
 	MovingGameObj* m_pVehicle;
+
+private:
+	void rearrangeBehaviors();
 };
 
 #endif

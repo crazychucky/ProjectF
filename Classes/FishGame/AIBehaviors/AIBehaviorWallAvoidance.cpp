@@ -6,6 +6,8 @@ AIBehaviorWallAvoidacne::AIBehaviorWallAvoidacne(MovingGameObj* obj,CCRect wallR
 	m_pVehicle = obj;
 	m_wallRect = wallRect;
 	m_behaviorType = AIBehavior::wall_avoidance;
+	setAIPriority(m_behaviorType);
+
 	m_behaviorWeight = 10.0f;
 }
 

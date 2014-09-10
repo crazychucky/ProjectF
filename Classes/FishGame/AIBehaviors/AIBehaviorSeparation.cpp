@@ -3,8 +3,10 @@
 AIBehaviorSeparation::AIBehaviorSeparation(MovingGameObj* obj)
 {
 	m_behaviorType = AIBehavior::separation;
+	setAIPriority(m_behaviorType);
+
 	m_pVehicle = obj;
-	m_behaviorWeight = 10.0f;
+	m_behaviorWeight = 5.0f;
 }
 
 AIBehaviorSeparation::~AIBehaviorSeparation()
