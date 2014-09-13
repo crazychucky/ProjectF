@@ -84,6 +84,9 @@
     <ClCompile Include="..\Classes\FishGame\Test\MultiFishAITestScene.cpp">
       <Filter>Classes\FishGame\Test</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\WaterFilter\ShaderNode.cpp">
+      <Filter>Classes\WaterFilter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -148,6 +151,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorSettings.h">
       <Filter>Classes\FishGame\AIBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WaterFilter\ShaderNode.h">
+      <Filter>Classes\WaterFilter</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
