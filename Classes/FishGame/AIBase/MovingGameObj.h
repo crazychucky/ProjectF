@@ -56,22 +56,11 @@ public:
 		}
 	}
 
-	bool isTaged()const
-	{
-		return m_bTag;
-	}
+	bool isTaged()const{return m_bTag;}
 
 	void TagMovingGameObj(float neighborRadius);
 
-	int getNeighborsSize()const
-	{
-		return m_iNeighborsSize;
-	}
-
-	MovingGameObj* getNeighborByIndex(int i)
-	{
-		return m_neighbors[i];
-	}
+	CCArray* getNeighbors()const{return m_neighbors;};
 
 	void onEnter();
 	void onExit();
@@ -89,8 +78,7 @@ protected:
 	CCPoint m_obLastPosition;
 	bool m_bTag;
 	
-	int m_iNeighborsSize;
-	MovingGameObj* m_neighbors[k_Max_Obj];
+	CCArray* m_neighbors;
 };
 
 #define GetMovingGameObj(d) MovingGameObj::getMovingGameObjByID(d)

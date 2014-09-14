@@ -4,4 +4,6 @@
 
 //AI 权重定义
 
+#define AI_WEIGHT_COHESION 1.0f
+
 #endif

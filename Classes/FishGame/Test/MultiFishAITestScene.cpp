@@ -1,6 +1,8 @@
 #include "FishGame/Test/MultiFishAITestScene.h"
 #include "FishGame/AIBase/SteeringBehaviors.h"
 #include "FishGame/AIBehaviors/AIBehaviorSeparation.h"
+#include "FishGame/AIBehaviors/AIBehaviorCohesion.h"
+#include "FishGame/AIBehaviors/AIBehaviorAlignment.h"
 
 #define BG_IMAGE "white.jpg"
 
@@ -92,8 +94,14 @@ void MultiFishAITestScene::onSwitchSeparationAI(CCObject* pSender,TouchEventType
 			{
 				pSteering = m_multiFish[i]->getSteering();
 
-				AIBehaviorSeparation* pAI = new AIBehaviorSeparation(m_multiFish[i]);
-				pSteering->addBehavior(pAI);
+				AIBehaviorSeparation* pAI1 = new AIBehaviorSeparation(m_multiFish[i]);
+				pSteering->addBehavior(pAI1);
+
+				AIBehaviorCohesion* pAI2 = new AIBehaviorCohesion(m_multiFish[i]);
+				pSteering->addBehavior(pAI2);
+
+				AIBehaviorAlignment* pAI3 = new AIBehaviorAlignment(m_multiFish[i]);
+				pSteering->addBehavior(pAI3);
 			}
 		}
 		else
@@ -105,6 +113,8 @@ void MultiFishAITestScene::onSwitchSeparationAI(CCObject* pSender,TouchEventType
 			{
 				pSteering = m_multiFish[i]->getSteering();
 				pSteering->removeBehavior(AIBehavior::separation);
+				pSteering->removeBehavior(AIBehavior::cohesion);
+				pSteering->removeBehavior(AIBehavior::allignment);
 			}
 		}
 	

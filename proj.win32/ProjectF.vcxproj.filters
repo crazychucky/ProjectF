@@ -87,6 +87,15 @@
     <ClCompile Include="..\Classes\WaterFilter\ShaderNode.cpp">
       <Filter>Classes\WaterFilter</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\AIBehaviors\AIBehaviorCohesion.cpp">
+      <Filter>Classes\FishGame\AIBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\AIBehaviors\AIBehaviorSeek.cpp">
+      <Filter>Classes\FishGame\AIBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\AIBehaviors\AIBehaviorAlignment.cpp">
+      <Filter>Classes\FishGame\AIBehaviors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -154,6 +163,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\WaterFilter\ShaderNode.h">
       <Filter>Classes\WaterFilter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorCohesion.h">
+      <Filter>Classes\FishGame\AIBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorSeek.h">
+      <Filter>Classes\FishGame\AIBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorAlignment.h">
+      <Filter>Classes\FishGame\AIBehaviors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -98,6 +98,12 @@ CCPoint SteeringBehaviors::calculateAllBehaviorsForce()
 	CCPoint vForce = CCPointZero;
 
 	AIBehavior* theBehavior = NULL;
+
+	if(isBehaviorOn(AIBehavior::separation)||isBehaviorOn(AIBehavior::cohesion)||isBehaviorOn(AIBehavior::allignment))
+	{
+		m_pVehicle->TagMovingGameObj(70.0f);
+	}
+
     for (unsigned int i = 0; i< m_allBehaviors->count(); i++)
 	{
 		theBehavior = dynamic_cast<AIBehavior*>(m_allBehaviors->objectAtIndex(i));

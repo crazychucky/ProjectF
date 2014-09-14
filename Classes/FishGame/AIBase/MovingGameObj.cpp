@@ -12,11 +12,9 @@ MovingGameObj::MovingGameObj()
 	m_fObjRadius=0;
 	m_pSteering=new SteeringBehaviors(this);
 	m_bTag=false;
-	m_iNeighborsSize=0;
-	for (int i=0;i<k_Max_Obj;i++)
-	{
-		m_neighbors[i]=NULL;
-	}
+
+	m_neighbors = CCArray::create();
+	m_neighbors->retain();
 }
 
 MovingGameObj::~MovingGameObj()
@@ -25,6 +23,9 @@ MovingGameObj::~MovingGameObj()
 	{
 		delete(m_pSteering);
 	}
+
+	m_neighbors->removeAllObjects();
+	m_neighbors->release();
 }
 
 MovingGameObj* MovingGameObj::create(float objMass,float objMaxSpeed,float objMaxForce,CCPoint heading)
@@ -80,9 +81,9 @@ void MovingGameObj::steeringMoving(float dt)
 
 void MovingGameObj::TagMovingGameObj(float neighborRadius)
 {
+	m_neighbors->removeAllObjects();
 	MovingGameObj* checkObj=NULL;
-	int nCount=0;
-	for (int i=0;i<=GameObj::getMaxGameObjID();i++)
+	for (int i = 0;i <= GameObj::getMaxGameObjID();i++)
 	{
 		if (i==this->getObjID())
 		{
@@ -92,11 +93,9 @@ void MovingGameObj::TagMovingGameObj(float neighborRadius)
 		checkObj=GetMovingGameObj(i);
 		if ( checkObj->getPosition().getDistanceSq(this->getPosition())<neighborRadius*neighborRadius )
 		{
-			m_neighbors[nCount]=checkObj;
-			nCount++;
+			m_neighbors->addObject(checkObj);
 		}
 	}
-	m_iNeighborsSize=nCount;
 }
 
 void MovingGameObj::onEnter()
