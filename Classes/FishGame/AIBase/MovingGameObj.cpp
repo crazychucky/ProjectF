@@ -12,6 +12,7 @@ MovingGameObj::MovingGameObj()
 	m_fObjRadius=0;
 	m_pSteering=new SteeringBehaviors(this);
 	m_bTag=false;
+	m_fMaxSpeedFactor = 1.0f;
 
 	m_neighbors = CCArray::create();
 	m_neighbors->retain();
@@ -62,7 +63,8 @@ void MovingGameObj::steeringMoving(float dt)
 	m_vVelocity =m_vVelocity + acceleration; 
 
 	//make sure vehicle does not exceed maximum velocity m_vVelocity.Truncate(m_dMaxSpeed);
-	CommonFunction::VectorTruncate(m_vVelocity,m_fMaxSpeed);
+	//CommonFunction::VectorTruncate(m_vVelocity,m_fMaxSpeed);
+	CommonFunction::VectorTruncate(m_vVelocity,getMaxSpeed());
 
 	//update the position m_vPos =m_vPos + m_vVelocity;
 	//update the heading if the vehicle has a non zero velocity

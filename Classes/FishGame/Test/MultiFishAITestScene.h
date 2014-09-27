@@ -20,6 +20,7 @@ public:
 
 	virtual void debugDraw();
 
+	void update(float dt);
 private:
 	bool m_separationAIFlag;
 	CCLayer* m_bgLayer;

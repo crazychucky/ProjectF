@@ -4,6 +4,10 @@
 #include "FishGame/AIBehaviors/AIBehaviorCohesion.h"
 #include "FishGame/AIBehaviors/AIBehaviorAlignment.h"
 
+#include "FishGame/AIBase/StateMachine.h"
+#include "FishGame/AIStates/AICautionState.h"
+#include "FishGame/AIStates/AIIdleState.h"
+
 #define BG_IMAGE "white.jpg"
 
 MultiFishAITestScene::MultiFishAITestScene()
@@ -76,6 +80,8 @@ bool MultiFishAITestScene::init()
 
 	//debug draw
 	this->addChild(DrawLayer::create(this));
+
+	scheduleUpdate();
 	return true;
 }
 
@@ -127,4 +133,35 @@ void MultiFishAITestScene::debugDraw()
 	CCRect drawRect = CCRectMake(20.f,20.0f,760.0f,440.0f);
 	CCPoint dstPt = drawRect.origin+ccp(drawRect.size.width,drawRect.size.height);
 	ccDrawRect(drawRect.origin,dstPt);
+}
+
+void MultiFishAITestScene::update(float dt)
+{
+	static int timeCounter = 0;
+	timeCounter++;
+	if (timeCounter == 1000)
+	{
+		timeCounter = 0;
+	}
+
+	if (timeCounter == 500)
+	{
+		StateMachine<MovingGameObj> *p_StateMachine;
+		for (int i = 0 ;i < MultiFishNum;i++)
+		{
+			p_StateMachine = m_multiFish[i]->getFSM();
+
+			p_StateMachine->changeState(AIIdleState::Instance());
+		}
+	}
+	else if (900 == timeCounter)
+	{
+		StateMachine<MovingGameObj> *p_StateMachine;
+		for (int i = 0 ;i < MultiFishNum;i++)
+		{
+			p_StateMachine = m_multiFish[i]->getFSM();
+
+			p_StateMachine->changeState(AICautionState::Instance());
+		}
+	}
 }

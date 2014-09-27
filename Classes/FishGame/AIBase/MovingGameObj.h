@@ -20,9 +20,11 @@ public:
 
 	SteeringBehaviors*const getSteering() const;
 
+	void setMaxSpeedFactor(float f){ m_fMaxSpeedFactor = f;}
+
 	float getMaxForce()const{ return m_fMaxForce;}
 
-	float getMaxSpeed()const{ return m_fMaxSpeed;}
+	float getMaxSpeed()const{ return m_fMaxSpeed*m_fMaxSpeedFactor;}
 
 	float getSpeed()const{ return m_vVelocity.getLength();}
 
@@ -79,6 +81,9 @@ protected:
 	bool m_bTag;
 	
 	CCArray* m_neighbors;
+
+	//new add
+	float m_fMaxSpeedFactor;
 };
 
 #define GetMovingGameObj(d) MovingGameObj::getMovingGameObjByID(d)

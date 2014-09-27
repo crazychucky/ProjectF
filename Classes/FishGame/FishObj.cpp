@@ -3,17 +3,22 @@
 #include "FishGame/AIBase/SteeringBehaviors.h"
 #include "FishGame/AIBehaviors/AIBehaviorWander.h"
 #include "FishGame/AIBehaviors/AIBehaviorWallAvoidacne.h"
+#include "FishGame/AIStates/AIIdleState.h"
+#include "FishGame/AIStates/AICautionState.h"
 
 #define FISH_IMAGE "circle.png"
 
 FishObj::FishObj()
 {
-
+	m_pStateMachine = NULL;
 }
 
 FishObj::~FishObj()
 {
-
+	if (m_pStateMachine)
+	{
+		delete(m_pStateMachine);
+	}
 }
 
 bool FishObj::init()
@@ -44,6 +49,10 @@ bool FishObj::init()
 
 	AIBehaviorWallAvoidacne* pAIWallAvoidance = new AIBehaviorWallAvoidacne(this,wall);
 	pSteering->addBehavior(pAIWallAvoidance);
+
+	m_pStateMachine = new StateMachine<MovingGameObj>(this);
+	m_pStateMachine->setCurrentState(AICautionState::Instance());
+
 	
 	/*
 	pSteering->WallAvoidanceOn(wall);
@@ -81,4 +90,6 @@ void FishObj::update(float dt)
 		ro=-ro;
 	}
 	this->setRotation(ro);
+
+	m_pStateMachine->update();
 }

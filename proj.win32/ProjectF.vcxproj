@@ -144,6 +144,8 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\FishGame\AIBehaviors\AIBehaviorSeparation.cpp" />
     <ClCompile Include="..\Classes\FishGame\AIBehaviors\AIBehaviorWallAvoidance.cpp" />
     <ClCompile Include="..\Classes\FishGame\AIBehaviors\AIBehaviorWander.cpp" />
+    <ClCompile Include="..\Classes\FishGame\AIStates\AICautionState.cpp" />
+    <ClCompile Include="..\Classes\FishGame\AIStates\AIIdleState.cpp" />
     <ClCompile Include="..\Classes\FishGame\FishObj.cpp" />
     <ClCompile Include="..\Classes\FishGame\Test\DrawLayer.cpp" />
     <ClCompile Include="..\Classes\FishGame\Test\FishGameTestScene.cpp" />
@@ -163,7 +165,10 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\FishGame\AIBase\AIBehaviors.h" />
     <ClInclude Include="..\Classes\FishGame\AIBase\GameObj.h" />
     <ClInclude Include="..\Classes\FishGame\AIBase\MovingGameObj.h" />
+    <ClInclude Include="..\Classes\FishGame\AIBase\State.h" />
+    <ClInclude Include="..\Classes\FishGame\AIBase\StateMachine.h" />
     <ClInclude Include="..\Classes\FishGame\AIBase\SteeringBehaviors.h" />
+    <ClInclude Include="..\Classes\FishGame\AIBase\Telegram.h" />
     <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorAlignment.h" />
     <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorCohesion.h" />
     <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorSeek.h" />
@@ -171,6 +176,8 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorSettings.h" />
     <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorWallAvoidacne.h" />
     <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorWander.h" />
+    <ClInclude Include="..\Classes\FishGame\AIStates\AICautionState.h" />
+    <ClInclude Include="..\Classes\FishGame\AIStates\AIIdleState.h" />
     <ClInclude Include="..\Classes\FishGame\FishObj.h" />
     <ClInclude Include="..\Classes\FishGame\Test\DrawLayer.h" />
     <ClInclude Include="..\Classes\FishGame\Test\FishGameTestScene.h" />

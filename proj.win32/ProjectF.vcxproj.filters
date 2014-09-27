@@ -28,6 +28,9 @@
     <Filter Include="Classes\FishGame\AIBehaviors">
       <UniqueIdentifier>{f8d8a63c-f033-4ba4-a4ae-4b2f8b9ec768}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\FishGame\AIStates">
+      <UniqueIdentifier>{bb2d4d7d-0148-49bb-bdb4-7b9cbb212327}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -95,6 +98,12 @@
     </ClCompile>
     <ClCompile Include="..\Classes\FishGame\AIBehaviors\AIBehaviorAlignment.cpp">
       <Filter>Classes\FishGame\AIBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\AIStates\AIIdleState.cpp">
+      <Filter>Classes\FishGame\AIStates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FishGame\AIStates\AICautionState.cpp">
+      <Filter>Classes\FishGame\AIStates</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +181,21 @@
     </ClInclude>
     <ClInclude Include="..\Classes\FishGame\AIBehaviors\AIBehaviorAlignment.h">
       <Filter>Classes\FishGame\AIBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIBase\Telegram.h">
+      <Filter>Classes\FishGame\AIBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIBase\State.h">
+      <Filter>Classes\FishGame\AIBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIBase\StateMachine.h">
+      <Filter>Classes\FishGame\AIBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIStates\AIIdleState.h">
+      <Filter>Classes\FishGame\AIStates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FishGame\AIStates\AICautionState.h">
+      <Filter>Classes\FishGame\AIStates</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
