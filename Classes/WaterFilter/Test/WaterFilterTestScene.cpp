@@ -28,7 +28,7 @@ bool WaterFilterTestScene::init()
 
 	*/
 
-#if 1
+#if 0
 	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 	CCNode* node = CCNode::create();
 	node->setTag(999);
@@ -47,7 +47,7 @@ bool WaterFilterTestScene::init()
 	//CCActionInterval * liquid = CCLiquid::create(2, CCSizeMake(32,24), 1, 20);
 	//sp->runAction(liquid);
 
-#if 0
+#if 1
 	CRippleLayer* pLayer = CRippleLayer::create();
 	this->addChild(pLayer);
 #endif

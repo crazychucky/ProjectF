@@ -71,10 +71,10 @@ void CRippleLayer::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
 	CCPoint point = touch->getLocation();
 
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
-	int xw = size.width/m_unGridWidthNum;
-	int yh = size.height/m_unGridHeightNum;
-	int x = point.x/xw;
-	int y = point.y/yh;
+	float xw = size.width/m_unGridWidthNum;
+	float yh = size.height/m_unGridHeightNum;
+	int x = (int)(point.x/xw);
+	int y = (int)(point.y/yh);
 
 	// 计算得到波源所在格子编号位，创建大波源
 	DropStone(x, y, 16, 48 );

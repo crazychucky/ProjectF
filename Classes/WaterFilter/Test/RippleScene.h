@@ -22,8 +22,8 @@
 USING_NS_CC;
 //--------------------------------------------------------
 // 分割波纹格横纵向个数
-#define RIPPLE_GRID_WIDTH_NUM		240
-#define RIPPLE_GRID_HEIGHT_NUM		160
+#define RIPPLE_GRID_WIDTH_NUM		320
+#define RIPPLE_GRID_HEIGHT_NUM		192
 //--------------------------------------------------------
 class CRippleLayer : public cocos2d::CCLayer
 {
