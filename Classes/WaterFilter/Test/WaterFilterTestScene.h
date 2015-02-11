@@ -16,6 +16,7 @@ public:
 	void onExit();
 
 private:
+	void testFunc(float dt);
 
 };
 

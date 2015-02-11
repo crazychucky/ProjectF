@@ -154,6 +154,8 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\TestMainScene.cpp" />
     <ClCompile Include="..\Classes\WaterFilter\ShaderNode.cpp" />
+    <ClCompile Include="..\Classes\WaterFilter\Test\RippleGrid3D.cpp" />
+    <ClCompile Include="..\Classes\WaterFilter\Test\RippleScene.cpp" />
     <ClCompile Include="..\Classes\WaterFilter\Test\WaterFilterTestScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -186,6 +188,8 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\TestMainScene.h" />
     <ClInclude Include="..\Classes\WaterFilter\ShaderNode.h" />
+    <ClInclude Include="..\Classes\WaterFilter\Test\RippleGrid3D.h" />
+    <ClInclude Include="..\Classes\WaterFilter\Test\RippleScene.h" />
     <ClInclude Include="..\Classes\WaterFilter\Test\WaterFilterTestScene.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
